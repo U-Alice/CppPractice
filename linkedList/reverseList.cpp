@@ -23,7 +23,7 @@ Node* reverse(Node* head){
         previous = current;
         current = ahead;
     }
-    return head;
+    return previous;
 }
 void display(Node *head)
 {
