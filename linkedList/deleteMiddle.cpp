@@ -26,16 +26,18 @@ Node *deleteMiddle(Node *head, int data)
         delete temp;
         return head;
     }
-    while (head->next != NULL)
+    Node *temp = head;
+    while (temp != NULL)
     {
-        Node *temp = head->next;
-        if (head->next->data == data)
+        if (temp->next->data == data)
         {
-            head->next = head->next->next;
-            delete (temp);
+            Node *temp2 = temp->next;
+            temp->next = temp->next->next;
+            delete (temp2);
         }
-        head = head->next;
+        temp = temp->next;
     }
+    return head;
 }
 void display(Node *head)
 {
@@ -56,7 +58,7 @@ int main()
     n2->next = n3;
     n3->next = n4;
     n4->next = n5;
-    n1 = deleteMiddle(n1, 5);
+    n1 = deleteMiddle(n1, 9);
     display(n1);
     return 0;
 }

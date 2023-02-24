@@ -33,7 +33,6 @@ int search1(Node *head, int x){
         head = head->next;
     }
     return  0;
-
 }
 
 int main()
